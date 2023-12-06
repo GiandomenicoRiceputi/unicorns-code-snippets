@@ -24,6 +24,7 @@ const config: Config = {
       },
     },
   },
+  // @ts-ignore
   plugins: [multiThemePlugin],
 };
 

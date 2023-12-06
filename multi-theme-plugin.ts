@@ -1,17 +1,19 @@
-
-import { PluginCreator } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import hexRgb from "hex-rgb";
 
-function getRgbChannels(hex: string): string {
+// ------------------------------
+// Helpers
+// ------------------------------
+
+function getRgbChannels(hex: string) {
   const { red, green, blue } = hexRgb(hex);
   return `${red} ${green} ${blue}`;
 }
 
-type ColorTheme = {
-  [key: string]: string;
-};
-
-const themes: Record<string, ColorTheme> = {
+// ------------------------------
+// Color themes
+// ------------------------------
+const themes = {
   base: {
     50: "#eef2ff",
     100: "#e0e7ff",
@@ -50,7 +52,7 @@ const themes: Record<string, ColorTheme> = {
   },
 };
 
-export const multiThemePlugin: PluginCreator = ({ addBase }) => {
+module.exports = plugin(function ({ addBase }) {
   addBase({
     ":root": {
       "--primary-50": getRgbChannels(themes.base["50"]),

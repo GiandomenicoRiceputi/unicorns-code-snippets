@@ -1,169 +1,133 @@
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
+const products = [
+  {
+    id: 1,
+    name: "Zip Tote Basket",
+    color: "White and black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+    imageAlt:
+      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
+    price: "$140",
+  },
+  {
+    id: 2,
+    name: "Medium Cotton Tote Bag",
+    color: "Natural",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-02.jpg",
+    imageAlt:
+      "Front of tote bag with natural canvas, canvas handles, and white print.",
+    price: "$50",
+  },
+  {
+    id: 3,
+    name: "Large Canvas Tote Bag",
+    color: "Blue",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-03.jpg",
+    imageAlt:
+      "Front of tote bag with blue canvas, canvas handles, and white print.",
+    price: "$60",
+  },
+  {
+    id: 4,
+    name: "Leather Wallet",
+    color: "Brown",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-04.jpg",
+    imageAlt:
+      "Front of leather wallet with traditional folding design and brown color.",
+    price: "$90",
+  },
+  {
+    id: 5,
+    name: "Leather Card Case",
+    color: "Black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+    imageAlt:
+      "Front of leather card case with black color and traditional design.",
+    price: "$85",
+  },
+  {
+    id: 6,
+    name: "Eco Tote Bag",
+    color: "Green",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+    imageAlt:
+      "Front of tote bag with green canvas made from recycled materials.",
+    price: "$40",
+  },
+  {
+    id: 7,
+    name: "Eco Travel Bag",
+    color: "Black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg",
+    imageAlt:
+      "Front of travel bag with black canvas made from recycled materials and black straps.",
+    price: "$100",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="m-8">
-      <h2 className="text-lg font-semibold text-slate-900">Color shades</h2>
-      <div className="mt-2 flex flex-wrap gap-6">
-        <div
-          className="inline-flex overflow-hidden rounded-md"
-          data-theme="base"
-        >
-          <div className="bg-primary-50 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            50
-          </div>
-          <div className="bg-primary-100 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            100
-          </div>
-          <div className="bg-primary-200 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            200
-          </div>
-          <div className="bg-primary-300 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            300
-          </div>
-          <div className="bg-primary-400 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            400
-          </div>
-          <div className="bg-primary-500 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            500
-          </div>
-          <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            600
-          </div>
-          <div className="bg-primary-700 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            700
-          </div>
-          <div className="bg-primary-800 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            800
-          </div>
-          <div className="bg-primary-900 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            900
-          </div>
-        </div>
-        <div
-          className="inline-flex overflow-hidden rounded-md"
-          data-theme="rainforest"
-        >
-          <div className="bg-primary-50 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            50
-          </div>
-          <div className="bg-primary-100 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            100
-          </div>
-          <div className="bg-primary-200 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            200
-          </div>
-          <div className="bg-primary-300 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            300
-          </div>
-          <div className="bg-primary-400 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            400
-          </div>
-          <div className="bg-primary-500 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            500
-          </div>
-          <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            600
-          </div>
-          <div className="bg-primary-700 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            700
-          </div>
-          <div className="bg-primary-800 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            800
-          </div>
-          <div className="bg-primary-900 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            900
-          </div>
-        </div>
-        <div
-          className="inline-flex overflow-hidden rounded-md"
-          data-theme="candy"
-        >
-          <div className="bg-primary-50 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            50
-          </div>
-          <div className="bg-primary-100 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            100
-          </div>
-          <div className="bg-primary-200 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            200
-          </div>
-          <div className="bg-primary-300 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            300
-          </div>
-          <div className="bg-primary-400 text-primary-900 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            400
-          </div>
-          <div className="bg-primary-500 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            500
-          </div>
-          <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            600
-          </div>
-          <div className="bg-primary-700 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            700
-          </div>
-          <div className="bg-primary-800 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            800
-          </div>
-          <div className="bg-primary-900 text-primary-50 grid h-16 w-16 place-items-end p-1 font-semibold leading-none">
-            900
-          </div>
-        </div>
-      </div>
-      <div className="mt-16">
-        <h2 className="text-lg font-semibold text-slate-900">Color opacity</h2>
-        <div className="mt-2 grid gap-6">
-          <div className="flex gap-4" data-theme="rose">
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              100%
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 className="text-xl font-bold text-gray-900">
+          Customers also bought
+        </h2>
+
+        <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+          {products.map((product) => (
+            <div className="bg-primary-50" data-theme="candy" key={product.id}>
+              <div className="relative">
+                <div className="relative h-72 w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    className="h-full w-full object-cover object-center"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="relative mt-4">
+                  <h3 className="text-sm font-medium text-primary-900">
+                    {product.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-primary-500">
+                    {product.color}
+                  </p>
+                </div>
+                <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+                  />
+                  <p className="relative text-lg font-semibold text-primary-200">
+                    {product.price}
+                  </p>
+                </div>
+              </div>
+              <div className="mt-6">
+                <a
+                  href={product.href}
+                  className="relative flex items-center justify-center rounded-md border border-transparent bg-primary-100 px-8 py-2 text-sm font-medium text-primary-900 hover:bg-primary-200"
+                >
+                  Add to bag<span className="sr-only">, {product.name}</span>
+                </a>
+              </div>
             </div>
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md bg-opacity-70 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              70%
-            </div>
-            <div className="bg-primary-600/50 text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              50%
-            </div>
-            <div className="bg-primary-600 text-primary-900 grid h-16 w-16 place-items-end rounded-md bg-opacity-30 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              30%
-            </div>
-            <div className="bg-primary-600/[0.1] text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              10%
-            </div>
-          </div>
-          <div className="flex gap-4" data-theme="rainforest">
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              100%
-            </div>
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md bg-opacity-70 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              70%
-            </div>
-            <div className="bg-primary-600/50 text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              50%
-            </div>
-            <div className="bg-primary-600 text-primary-900 grid h-16 w-16 place-items-end rounded-md bg-opacity-30 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              30%
-            </div>
-            <div className="bg-primary-600/[0.1] text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              10%
-            </div>
-          </div>
-          <div className="flex gap-4" data-theme="candy">
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              100%
-            </div>
-            <div className="bg-primary-600 text-primary-50 grid h-16 w-16 place-items-end rounded-md bg-opacity-70 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              70%
-            </div>
-            <div className="bg-primary-600/50 text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              50%
-            </div>
-            <div className="bg-primary-600 text-primary-900 grid h-16 w-16 place-items-end rounded-md bg-opacity-30 p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              30%
-            </div>
-            <div className="bg-primary-600/[0.1] text-primary-900 grid h-16 w-16 place-items-end rounded-md p-1 font-semibold leading-none ring-2 ring-inset ring-black/10">
-              10%
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
