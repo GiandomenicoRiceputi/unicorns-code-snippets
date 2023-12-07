@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useTheme } from "@/app/layout";
 import ProductPage, { Theme } from "@/components/productcard/page";
 
 const products = [
@@ -84,28 +84,14 @@ const products = [
 ];
 
 export default function Home() {
-  const [theme, setTheme] = useState<Theme>("base");
-
-  const themes = {
-    rainforest: "base",
-    candy: "rainforest",
-    base: "candy",
-    default: "base",
-  };
-
-  const handleTheme = () =>
-    setTheme(
-      (prevTheme) =>
-        (themes[prevTheme] as Theme) || (themes["default"] as Theme),
-    );
+  const { theme, setTheme } = useTheme();
 
   return (
     <div>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <button
-          data-theme={theme}
           className="w-full mb-5 rounded-md border border-transparent bg-primary-500 px-4 py-3 text-base font-medium text-primary-50 shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-50"
-          onClick={handleTheme}
+          onClick={() => setTheme("base")}
         >
           Click To Change Theme
         </button>
@@ -116,7 +102,7 @@ export default function Home() {
           {products.map((product) => (
             <ProductPage
               product={product}
-              theme={theme}
+              theme={theme as Theme}
               key={product.id}
             ></ProductPage>
           ))}
