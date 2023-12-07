@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import ProductPage, { Theme } from "@/components/productcard/page";
+
 const products = [
   {
     id: 1,
@@ -82,16 +83,21 @@ const products = [
   },
 ];
 
-// "rainforrest", "candy"
-
 export default function Home() {
-  const [theme, setTheme] = useState("base");
+  const [theme, setTheme] = useState<Theme>("base");
 
-  const handleTheme = () => {
-    if (theme === "rainforest") setTheme("base");
-    if (theme === "candy") setTheme("rainforest");
-    if (theme === "base") setTheme("candy");
+  const themes = {
+    rainforest: "base",
+    candy: "rainforest",
+    base: "candy",
+    default: "base",
   };
+
+  const handleTheme = () =>
+    setTheme(
+      (prevTheme) =>
+        (themes[prevTheme] as Theme) || (themes["default"] as Theme),
+    );
 
   return (
     <div>
@@ -108,44 +114,11 @@ export default function Home() {
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <div className="bg-primary-50" data-theme={theme} key={product.id}>
-              <div className="relative">
-                <div className="relative h-72 w-full overflow-hidden rounded-lg">
-                  <Image
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
-                    className="h-full w-full object-cover object-center"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-                <div className="relative mt-4">
-                  <h3 className="text-sm font-medium text-primary-900">
-                    {product.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-primary-500">
-                    {product.color}
-                  </p>
-                </div>
-                <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-                  />
-                  <p className="relative text-lg font-semibold text-primary-200">
-                    {product.price}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6">
-                <button
-                  type="submit"
-                  className="w-full rounded-md border border-transparent bg-primary-500 px-4 py-3 text-base font-medium text-primary-50 shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-50"
-                >
-                  Add to bag<span className="sr-only">, {product.name}</span>
-                </button>
-              </div>
-            </div>
+            <ProductPage
+              product={product}
+              theme={theme}
+              key={product.id}
+            ></ProductPage>
           ))}
         </div>
       </div>
