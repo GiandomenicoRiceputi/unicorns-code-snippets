@@ -84,17 +84,11 @@ const products = [
 ];
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <button
-          className="w-full mb-5 rounded-md border border-transparent bg-primary-500 px-4 py-3 text-base font-medium text-primary-50 shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-50"
-          onClick={() => setTheme("base")}
-        >
-          Click To Change Theme
-        </button>
         <h2 className="text-xl font-bold text-primary-900">
           Customers also bought
         </h2>
