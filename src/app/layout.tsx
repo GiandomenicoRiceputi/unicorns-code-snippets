@@ -3,6 +3,7 @@ import { createContext, useState, FC, useContext, ReactNode } from "react";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 type ThemeName = "rainforest" | "candy" | "base" | "default";
@@ -38,12 +39,15 @@ const RootLayout: FC<{ children?: ReactNode }> = ({ children }) => {
         </Head>
         <body className={inter.className}>
           <div>
-            <button
-              onClick={rotateTheme}
-              className="w-full mb-5 rounded-md border border-transparent bg-primary-500 px-4 py-3 text-base font-medium text-primary-50 shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-50"
-            >
-              Click To Change Theme
-            </button>
+            <div className="flex justify-center items-center">
+              <button
+                onClick={rotateTheme}
+                className="mx-auto my-5 text-center rounded-full border border-transparent bg-primary-700 px-4 py-3 text-base font-medium text-primary-50 shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-gray-50"
+              >
+                Click To Change Theme
+              </button>
+            </div>
+
             {children}
           </div>
         </body>
